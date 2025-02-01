@@ -38,6 +38,14 @@ pipeline {
                 }
             }
         }
+
+        stage('NPM Build') {
+            steps {
+                script {
+                    sh 'npm run build' // Runs the NPM build command
+                }
+            }
+        }
     }
 
     post {

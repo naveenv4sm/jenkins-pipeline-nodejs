@@ -25,7 +25,8 @@ pipeline {
                 script {
                     sh 'node --version'
                     sh 'npm install'
-                    sh 'gulp lint'
+                    sh 'npm install -g gulp-cli' // Ensure gulp is globally installed
+                    sh 'npx gulp lint' // Use npx to run gulp
                 }
             }
         }
@@ -34,7 +35,7 @@ pipeline {
             steps {
                 script {
                     sh 'node --version'
-                    sh 'gulp test'
+                    sh 'npx gulp test'
                 }
             }
         }

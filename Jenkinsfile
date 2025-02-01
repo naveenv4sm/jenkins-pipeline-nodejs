@@ -25,8 +25,7 @@ pipeline {
                 script {
                     sh 'node --version'
                     sh 'npm install'
-                    sh 'npm install gulp-cli' // Install locally to avoid permission issues
-                    sh 'npx gulp lint' // Use npx to execute
+                    sh 'gulp lint'
                 }
             }
         }
@@ -35,7 +34,7 @@ pipeline {
             steps {
                 script {
                     sh 'node --version'
-                    sh 'npx gulp test'
+                    sh 'gulp test'
                 }
             }
         }
@@ -43,7 +42,7 @@ pipeline {
         stage('NPM Build') {
             steps {
                 script {
-                    sh 'npm run build'
+                    sh 'npm run build' // Runs the NPM build command
                 }
             }
         }
